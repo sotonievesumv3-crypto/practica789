@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_universidad
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: universidad
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
